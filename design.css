@@ -8,10 +8,12 @@
  body { /*** der selector gibt an, für was diese Design-Vorgabe gilt */
     /*** wenn der selector so heißt wie der html tag, dann fühlt es sich angesprochen */
     background-color: black;
+    margin: 0; /**** das ist der aussenabstand....*/
 }
 
 /******* Typo Setup ********/
 h1 {
+    margin: 0;
     color: white;
     font-size: 20vh; /****** bei 100% Browser Zoom entsprich 1 REM = 16 GerätePixel */
     font-weight: 100;
