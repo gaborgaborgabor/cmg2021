@@ -1,0 +1,33 @@
+/************   Ich bin ein CSS Kommentar ***************/
+/************   hier ist NUR Design drin....niemals Content. ***************/
+
+
+
+/***** hier sind die Design Basics ******/
+
+ body { /*** der selector gibt an, für was diese Design-Vorgabe gilt */
+    /*** wenn der selector so heißt wie der html tag, dann fühlt es sich angesprochen */
+    background-color: black;
+}
+
+/******* Typo Setup ********/
+h1 {
+    color: white;
+    font-size: 20vh; /****** bei 100% Browser Zoom entsprich 1 REM = 16 GerätePixel */
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    line-height: 18vh; /* Zeilenabstand...*/
+}
+
+h1 .white { /**** die Class white in einer H1 drin......*/
+    background-color:white;
+    color: black;
+    font-style: italic;
+}
+
+
+/***** Content Layout *****/
+div {height:20vw;width: 20vw;color:white;}
+.box1 {background-color: black;}
+.box2 {background-color: red;}
+.box3 {background-color: green;}
