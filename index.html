@@ -19,16 +19,47 @@
 
 <body>
 
-    <a-scene  antialias="true"  loading-screen="dotsColor: #000; backgroundColor: black"  > <!-- das sind allgemeine Einstellungen für die 3D Scene-->
-        <a-sky color="#ffffff"  ></a-sky>
+    <a-scene  antialias="true"  fog="type: linear; color: #000; near: 3; far: 30"  loading-screen="dotsColor: #000; backgroundColor: black" shadow="type: pcfsoft" 
+    
+    
+    
+    > <!-- das sind allgemeine Einstellungen für die 3D Scene-->
+        <a-sky color="#000"  ></a-sky>
+        <assets> <!-- alle Mediendateien, welche vorgeladen werden...-->
+            <img id="bild1" src="assets/texture.jpg">
+            <img id="brick1" src="assets/bricks.jpg">
+        </assets>
 
-        <a-box position="0 0 -5" rotation="0 0 0" color="#4CC3D9"></a-box>
-
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 
 
+        <!-- das sind die Lichter -->
+
+        <a-entity light="type: hemisphere; color: #fff; groundColor: #333; intensity: 0.8" ></a-entity>
+        <a-entity light="type:directional; castShadow:true;" position="10 10 10" intensity="0.5"></a-entity>
+
+
+        <a-entity id="door" position='0 0 -5 rotation='0 -36.5 0'>
+            <a-plane width='6' height='3' position='0 1.5 0' material="src: #bild1; side: double" shadow="cast: true; receive: false"></a-plane> 
+            <a-box 
+                animation="property: rotation; to: 0 360 0; loop: true; dir: alternate; dur: 5000; easing: easeInOutQuad;"
+                position="-1 0.5 0" 
+                rotation="0 0 0" 
+                color="#4CC3D9" 
+                material="src: #brick1" 
+                shadow="cast: true; receive: true">
+            </a-box>
+        </a-entity>
+
+
+        <a-box  position="0 0.5 -10" color="red" material="src: #brick1" shadow="cast: true; receive: true"></a-box>
+        <a-box  position="0 0.5 -20" color="red" material="src: #brick1" shadow="cast: true; receive: true"></a-box>
+        <a-box  position="0 0.5 -30" color="red" material="src: #brick1" shadow="cast: true; receive: true"></a-box>
+        <a-box  position="0 0.5 -40" color="red" material="src: #brick1" shadow="cast: true; receive: true"></a-box>
+        <a-box  position="0 0.5 -50" color="red" material="src: #brick1" shadow="cast: true; receive: true"></a-box>
+   
+
+
+        <a-plane position="0 0 -5" rotation="-90 0 0" width="10" height="10" color="#7BC8A4" shadow="cast: true; receive: true"></a-plane> 
 
 
 
