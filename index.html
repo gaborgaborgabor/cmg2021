@@ -13,11 +13,16 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js" integrity="sha512-/gO16YMp20RIqCZXZyvMlzALQqEoiDU0akshw25wFiXCRGl+0p/HPWkOd8HWFn6bnatGhxakGLfYhWaPPVQIyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- das ist das aFrame Framework -->
 
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> <!-- für Philipp extra Orbit Funktion....-->
+
+
+
 
 </head>
 
 
 <body>
+
 
     <a-scene  antialias="true"  fog="type: linear; color: #000; near: 3; far: 30"  loading-screen="dotsColor: #000; backgroundColor: black" shadow="type: pcfsoft" 
     
@@ -28,8 +33,19 @@
         <assets> <!-- alle Mediendateien, welche vorgeladen werden...-->
             <img id="bild1" src="assets/texture.jpg">
             <img id="brick1" src="assets/bricks.jpg">
+            <audio id="sound" src="assets/sound.mp3" preload="auto" loop="true" ></audio>
+
+
         </assets>
 
+        <!-- das ist die normale  Kamera -->
+        <!-- <a-entity id="camera" camera look-controls wasd-controls position="10 5.7 -10">
+        </a-entity>    -->
+
+        <!-- das ist die Orbit Kamera -->
+        <a-entity camera orbit-controls="initialPosition: 5 5 5; autoRotate: true; autoRotateSpeed: 0.2; target: 0 0 0"></a-entity>
+
+    
 
 
         <!-- das sind die Lichter -->
@@ -37,6 +53,16 @@
         <a-entity light="type: hemisphere; color: #fff; groundColor: #333; intensity: 0.8" ></a-entity>
         <a-entity light="type:directional; castShadow:true;" position="10 10 10" intensity="0.5"></a-entity>
 
+        <!-- das ist ein Sound Objekt -->
+        <a-box sound="src: #sound; autoplay: true; loop: true;
+            volume: 1;
+            refDistance: 1;
+            rollofFactor: 1;"
+        >
+        </a-box>
+
+
+<!-- das sind die Körper-->
 
         <a-entity id="door" position='0 0 -5 rotation='0 -36.5 0'>
             <a-plane width='6' height='3' position='0 1.5 0' material="src: #bild1; side: double" shadow="cast: true; receive: false"></a-plane> 
